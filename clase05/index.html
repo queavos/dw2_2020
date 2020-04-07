@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>clase 05</title>
+  </head>
+  <body>
+<form class="" action="index.html" method="post">
+  <input type="hidden" id="idx" value="">
+    <p>
+      <label for="apellido">Apellido</label> <br>
+      <input type="text" id="apellido" value="">
+    </p>
+    <p>
+      <label for="nombre">Nombre</label><br>
+      <input type="text" id="nombre" value="">
+    </p>
+    <p>
+      <label for="fenac">Fecha de nacimiento</label><br>
+      <input type="date" id="fenac" value="">
+    </p>
+    <button type="button" id="enviar">Enviar</button>
+</form>
+<table border="1">
+  <thead>
+    <tr>
+
+
+    <th>id</th>
+    <th>Apellido</th>
+    <th>Nombre</th>
+    <th>Fecha</th>
+    <th><button type="button" id="nuevo" onclick="limpiarForm()">Nuevo</button></th>
+</tr>
+  </thead>
+  <tbody id="datos">
+
+  </tbody>
+</table>
+
+<script src="js/app.js" charset="utf-8"></script>
+  </body>
+</html>
