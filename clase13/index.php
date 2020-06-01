@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once("libs/conex.php");
+require_once("libs/setup.lib.php");
 require_once("libs/sugerencias.lib.php");
 $datos=suegrerenciasTodo($conn);
 // foreach ($datos as $dato) {
@@ -20,11 +22,15 @@ $datos=suegrerenciasTodo($conn);
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </head>
   <body>
+    <?php include("navbar.php"); ?>
     <div class="container">
       <?php foreach ($datos as $dato) { ?>
       <div class="card">
-        <div class="card-header">
-          <?php echo $dato['nombre']; ?> dice:
+        <div class="card-header" >
+        <?php if ($_SESSION['administrador']==1) { ?>
+        <a href="suge_borrar.php?id=<?php echo $dato['id']; ?>">Borrar</a>
+        <?php } ?>
+         <?php echo $dato['nombre']; ?> dice:
         </div>
           <div class="card-body">
               <?php echo $dato['sugerencias']; ?>
